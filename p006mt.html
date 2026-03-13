@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Multiplication Table</title>
+</head>
+<script>
+    function btnFind_onclick(){
+        var mn=0.0,op="";
+
+        mn = nummn.value;
+        mn = parseFloat(mn);
+        mn = isNaN(mn) ? 0 : mn;
+
+        for(let i=1; i<=20; i++)
+        {
+            op += i + " x " + mn + " = " + (i * mn) + "<br>";
+        }
+        spnop.innerHTML = op;
+        }
+</script>
+<table border="1">
+    <tr>
+        <td>Multiplication Number</td>
+        <td><input type="number" id="nummn" placeholder="0"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" onclick="location.href='p006mt.html';"></td>
+        <td><input type="button" value="Find" onclick="btnFind_onclick();"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><span id="spnop">Wait...</span></td>
+    </tr>
+</table>

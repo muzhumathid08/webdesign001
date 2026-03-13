@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--
+File name:
+concate.vs.overwrite.html
+-->
+
+<span id="spnop1">
+Wait...
+</span>
+
+<span id="spnop2">
+Wait...
+</span>
+
+<script>
+
+//'op' stands for 'output'
+//example for 'Append'
+var op=" ";
+op = 'sun';
+op += "<br>mon";
+op += "<br>tue";
+spnop1.innerHTML = op;
+
+//example for 'Overwrite'
+op = "<br>wed";
+op = "<br>thu";
+op = "<br>fri";
+spnop2.innerHTML = op;
+</script>
+
+<!--
+Append vs. Overwrite
+
+'Append'
+Add new content after on old content
+
+'Overwrite'
+Add new content after erase on old content
+-->

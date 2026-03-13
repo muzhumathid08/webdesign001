@@ -1,0 +1,45 @@
+   <!DOCTYPE html>
+   <head>
+    <title>Radio exa 1</title>
+   </head>
+   <script>
+        function uToFloat (s) {
+            var n = parseFloat(s);
+
+            n = isNaN(n) ? 0 : n;
+            return n;
+        }
+
+        function btnFind_onclick(){
+            
+            var m1 = uToFloat(numm1.value);
+            var m2 = uToFloat(numm2.value);
+
+            if(m1>34.4 && m2>34.4) {
+                rdobtnPass.checked = true;
+            } else {
+                rdobtnFail.checked = true;
+            }
+        }
+    </script>
+    <table border="1">
+        <tr>
+            <td>Mark 1</td>
+            <td><input type="number" id="numm1" placeholder="0.0" step="any"></td>
+        </tr>
+        <tr>
+            <td>Mark 2</td>
+            <td><input type="number" id="numm2" placeholder="0.0" step="any"></td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td><input type="radio" name="result" id="rdobtnPass" placeholder="0.0" step="any" disabled="disabled">Pass
+            <input type="radio" name="result" id="rdobtnFail" placeholder="0.0" step="any" disabled="disabled">Fail</td>
+        </tr>
+            <tr>
+        <td><input type="button" value="Cancel" 
+            onclick="location.href='radioexa1.html';""></td> 
+        <td><input type="button" value="Calculate"
+            onclick="btnFind_onclick();"></td>
+    </tr>
+    </table>

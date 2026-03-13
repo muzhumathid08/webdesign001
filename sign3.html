@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title>Sign3</title>
+    <script>
+        function btnFind_onclick(){
+            var n=0.0;
+
+            n=numn.value;
+            n=parseFloat(n);
+            n=isNaN(n) ? 0 : n;
+
+            if(n<0){
+                rdobtnNegative.checked = true;
+            } else if(n>0) {
+                rdobtnPositive.checked = true;
+            } else{
+                rdobtnNeutral.checked = true ;
+            }
+        }
+    </script>
+</head>
+<table border="1">
+    <tr>
+        <td>Enter number</td>
+        <td><input type="text" id="numn" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Signature</td>
+        <td><input type="radio" name="sign" id="rdobtnPositive" disabled="disabled">Positive <br>
+            <input type="radio" name="sign" id="rdobtnNegative" disabled="disabled">Negative <br>
+            <input type="radio" name="sign" id="rdobtnNeutral" disabled="disabled">Neutral <br></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" onclick="location.href='sign3.html';"></td>
+        <td><input type="button" value="Find" onclick="btnFind_onclick();"></td>
+    </tr>
+</table>

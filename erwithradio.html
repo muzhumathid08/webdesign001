@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Exam Result
+    </title>
+    <script>
+        function uToFloat (s) {
+            var n = parseFloat(s);
+
+            n = isNaN(n) ? 0 : n;
+            return n;
+        }
+
+        function btnFind_onclick(){
+            //below initialize variables
+            
+            var m1 = uToFloat(numm1.value);
+            var m2 = uToFloat(numm2.value);
+
+            total=m1 + m2;
+            avg=total/2;
+            
+            if(m1>34.4 && m2>34.4) {
+                rdobtnPass.checked = true;
+            } else {
+                rdobtnFail.checked = true;
+            }
+    
+            numtotal.value=total;
+            numavg.value=avg;
+        }
+    </script>
+</head>
+<table border="1">
+    <tr>
+        <td>Roll no:</td>
+        <td><input type="number" id="numrno" placeholder="0"></td> 
+    </tr>
+    <tr>
+        <td>Student name:</td>
+        <td><input type="text" id="tbxsname" placeholder="Unknown"></td> 
+    </tr>
+    <tr>
+        <td>Mark 1</td>
+        <td><input type="number" id="numm1" placeholder="0.0" step="any"></td> 
+    </tr>
+    <tr>
+        <td>Mark 2</td>
+        <td><input type="number" id="numm2" placeholder="0.0" step="any"></td> 
+    </tr>
+    <tr>
+        <td>Total</td>
+        <td><input type="number" id="numtotal" placeholder="0.0" step="any" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Average</td>
+        <td><input type="number" id="numavg" placeholder="0.0" step="any" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td><input type="radio" name="result" id="rdobtnPass" placeholder="result" disabled="disabled">Pass
+         <input type="radio" name="result" id="rdobtnFail" placeholder="result" disabled="disabled">Fail</td>  
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" 
+            onclick="location.href='erwithradio.html';""></td> 
+        <td><input type="button" value="Calculate"
+            onclick="btnFind_onclick();"></td>
+    </tr>
+</table>

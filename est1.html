@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <title>Employee Salary Tax</title>
+</head>
+<script>
+    function btnFind_onclick() {
+
+        var sal=0, tax10=0, tax20=0, tax30=0, tottax=0, npay=0;
+
+        sal = numsal.value;
+        sal = parseFloat(sal);
+        sal = isNaN(sal) ? 0 : sal;
+
+       // tax0% when sal is 0 - 250000
+       // tax10% when sal is between 250000 to 500000
+       // tax20% when sal is between 500000 to 1000000
+       // tax30% when sal is above 1000000
+       
+       if(sal<0){
+        alert('Invalid Salary');
+        location.href='est1.html';
+        } else if (sal>1000000) {
+        tax10 = 250000 * 10/100;
+        tax20 = 500000 * 20/100;
+        tax30 = (sal - 1000000) * 30/100;
+       }else if (sal>500000) {
+        tax10 = 250000 * 10/100;
+        tax20 = (sal - 500000) * 20/100;
+        tax30 = 0;
+       } else if (sal>250000) {
+        tax10 = (sal - 250000) * 10/100;
+        tax20 = 0;
+        tax30 = 0;
+       }
+
+        tottax = tax10 + tax20 + tax30;
+        npay = sal - tottax;
+
+
+        numtax10.value = tax10;
+        numtax20.value = tax20;
+        numtax30.value = tax30;
+        numtottax.value = tottax;
+        numnpay.value = npay;
+    }
+</script>
+<table border="1">
+    <tr>
+        <td>Employee ID</td>
+        <td><input type="number" id="numeid" placeholder="numeid"></td>
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td><input type="text" id="tbxename" placeholder="tbxename"></td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td><input type="number" id="numsal" placeholder="numsal" step="any"></td>
+    </tr>
+    <tr>
+        <td>Tax10%</td>
+        <td><input type="number" id="numtax10" placeholder="numtax10" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <tr>
+        <td>Tax20%</td>
+        <td><input type="number" id="numtax20" placeholder="numtax20" step="any" readonly="readonly"></td>
+    </tr>
+        <td>Tax30%</td>
+        <td><input type="number" id="numtax30" placeholder="numtax30" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td>Total Tax</td>
+        <td><input type="number" id="numtottax" placeholder="numtottax" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td>Net Pay</td>
+        <td><input type="number" id="numnpay" placeholder="numnpay" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" onclick="location.href='p007.est.html';"></td>
+        <td><input type="button" value="Calculate" onclick="btnFind_onclick();"></td>
+    </tr>
+</table>

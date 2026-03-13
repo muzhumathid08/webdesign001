@@ -1,0 +1,14 @@
+/*
+file name: eb01.css
+*/
+
+input[type='number']{
+    width: 99%;
+    text-align: right;
+}
+table{
+    width: 100%;
+}
+select{
+    width:100%
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Simple Interest</title>
+</head>
+<script>
+    function btnFind_onclick(){
+        var p=0.0, n=0.0, r=0.0, si=0.0;
+
+        p=nump.value;
+        p=parseFloat(p);
+        p=isNaN(p) ? 0 : p;
+
+        n=numn.value;
+        n=parseFloat(n);
+        n=isNaN(n) ? 0 : n;
+
+        r=numr.value;
+        r=parseFloat(r);
+        r=isNaN(r) ? 0 : r;
+
+        si=p * n * r/100;
+
+        numsi.value=si;
+
+    }
+</script>
+<table border="1">
+    <tr>
+        <td>Principle</td>
+        <td><input type="number" id="nump" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>No. of Years</td>
+        <td><input type="number" id="numn" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Rate of Interest</td>
+        <td><input type="number" id="numr" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Simple Interest Amount</td>
+        <td><input type="number" id="numsi" placeholder="0.0" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" onclick="location.href='p004si.html';"></td>
+        <td><input type="button" value="Find" onclick="btnFind_onclick();"></td>
+    </tr>
+</table>

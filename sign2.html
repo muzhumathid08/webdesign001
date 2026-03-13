@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title>Sign2</title>
+    <script>
+        function btnFind_onclick(){
+            var n=0.0;
+
+            n=numn.value;
+            n=parseFloat(n);
+            n=isNaN(n) ? 0 : n;
+
+            sign = (n<0 ? 'Negative' : (n>0) ? 'Positive' : 'Neutral');
+
+            tbxsign.value = sign;
+        }
+    </script>
+</head>
+<table border="1">
+    <tr>
+        <td>Enter number</td>
+        <td><input type="text" id="numn" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Signature</td>
+        <td><input type="text" id="tbxsign" placeholder="Positive/Negative/Neutral" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" onclick="location.href='sign2.html';"></td>
+        <td><input type="button" value="Find" onclick="btnFind_onclick();"></td>
+    </tr>
+</table>

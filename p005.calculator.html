@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+</head>.
+<script>
+    function btnAdd_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn + sn;
+
+        numres.value=res;
+
+    }
+     function btnSub_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn - sn;
+
+        numres.value=res;
+
+    }
+     function btnMul_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn * sn;
+
+        numres.value=res;
+
+    }
+     function btnDiv_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn / sn;
+
+        numres.value=res;
+
+    }
+     function btnPer_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn % sn;
+
+        numres.value=res;
+
+    }
+     function btnMod_onclick(){
+
+        var fn=0.0, sn=0.0,res=0.0;
+
+        fn=numfn.value;
+        fn=parseFloat(fn);
+        fn=isNaN(fn) ? 0 :fn;
+
+        sn=numsn.value;
+        sn=parseFloat(sn);
+        sn=isNaN(sn) ? 0 :sn;
+
+        res = fn ** sn;
+
+        numres.value=res;
+
+    }
+</script>
+<table border="1">
+    <tr>
+        <td>First Number</td>
+        <td><input type="number" id="numfn" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Second Number</td>
+        <td><input type="number" id="numsn" placeholder="0.0" step="any"></td>
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td><input type="number" id="numres" placeholder="0.0" step="any" readonly="readonly"></td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Cancel" onclick="location.href='p005.calculator.html';">
+            <input type="button" value="+" onclick="btnAdd_onclick();">
+            <input type="button" value="-" onclick="btnSub_onclick();">
+            <input type="button" value="*" onclick="btnMul_onclick();">
+        </td>
+        <td>
+            <input type="button" value="/" onclick="btnDiv_onclick();">
+            <input type="button" value="%" onclick="btnPer_onclick();">
+            <input type="button" value="^" onclick="btnMod_onclick();">
+        </td>
+    </tr>
+</table>

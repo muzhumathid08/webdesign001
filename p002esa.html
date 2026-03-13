@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Employee Salary Allowances
+    </title>
+    <script>
+        function btnFind_onclick(){
+            //below initialize variables
+            var sal=0, hra=0.0, da=0.0, pf=0.0, gpay=0.0, npay=0.0;
+
+            sal=numsal.value;
+            sal=parseFloat(sal);
+            sal=isNaN(sal) ? 0 : sal;
+        
+          //  hra= 20% of sal;
+          //  da= 15% of sal;
+          //  pf= 35% of sal;
+
+              hra= 0.20 * sal;
+              da= 0.15 * sal;
+              pf= 0.35 * sal;
+              gpay= sal + hra + da;
+              npay= gpay - pf;
+
+
+            numhra.value=hra;
+            numda.value=da;
+            numpf.value=pf;
+            numgpay.value=gpay;
+            numnpay.value=npay;
+        }
+    </script>
+</head>
+<table border="1">
+    <tr>
+        <td>Employee ID</td>
+        <td><input type="number" id="numeid" placeholder="0"></td> 
+    </tr>
+    <tr>
+        <td>Employee Name</td>
+        <td><input type="text" id="tbxename" placeholder="Unknown"></td> 
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td><input type="number" id="numsal" placeholder="0.0" step="any"></td> 
+    </tr>
+    <tr>
+        <td>House Rent Allowance</td>
+        <td><input type="number" id="numhra" placeholder="0.0" step="any" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Dearness Allowance</td>
+        <td><input type="number" id="numda" placeholder="0.0" step="any" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Provident Fund</td>
+        <td><input type="number" id="numpf" placeholder="0.0" step="any" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Gross Pay</td>
+        <td><input type="number" id="numgpay" placeholder="0.0" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td>Net Pay</td>
+        <td><input type="number" id="numnpay" placeholder="0.0" readonly="readonly"></td> 
+    </tr>
+    <tr>
+        <td><input type="button" value="Cancel" 
+            onclick="location.href='p002esa.html';"></td> 
+        <td><input type="button" value="Find"
+            onclick="btnFind_onclick();"></td>
+    </tr>
+</table>
